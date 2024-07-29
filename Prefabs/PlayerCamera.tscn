@@ -20,3 +20,7 @@ position = Vector2(0, -224)
 
 [node name="RightBounds" type="Marker2D" parent="."]
 position = Vector2(362, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(3, 3)

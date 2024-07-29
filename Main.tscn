@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctchhl40q778"]
+[gd_scene load_steps=4 format=3 uid="uid://ctchhl40q778"]
 
 [ext_resource type="Texture2D" uid="uid://cwhanm22q0hqm" path="res://Art/Backgrounds/ClearSky.svg" id="1_ybgpv"]
 [ext_resource type="PackedScene" uid="uid://bw7fwgd3ai1gw" path="res://Prefabs/PlayerCamera.tscn" id="2_8c0dv"]
+[ext_resource type="Texture2D" uid="uid://ba4p7pmvx1e4u" path="res://Art/Clouds/SnowmanCloud.svg" id="3_7gasy"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,4 +11,7 @@ texture = ExtResource("1_ybgpv")
 centered = false
 
 [node name="PlayerCamera" parent="." instance=ExtResource("2_8c0dv")]
-scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1021, 536)
+texture = ExtResource("3_7gasy")

@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctchhl40q778"]
+[gd_scene load_steps=7 format=3 uid="uid://ctchhl40q778"]
 
 [ext_resource type="Texture2D" uid="uid://cwhanm22q0hqm" path="res://Art/Backgrounds/ClearSky.svg" id="1_ybgpv"]
 [ext_resource type="PackedScene" uid="uid://bw7fwgd3ai1gw" path="res://Prefabs/PlayerCamera.tscn" id="2_8c0dv"]
 [ext_resource type="Texture2D" uid="uid://ba4p7pmvx1e4u" path="res://Art/Clouds/SnowmanCloud.svg" id="3_7gasy"]
+[ext_resource type="PackedScene" uid="uid://c2yd30ih043b5" path="res://Prefabs/InGameUI.tscn" id="4_xfacy"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="5_e50ht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u85nh"]
+size = Vector2(500, 300)
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,6 +17,34 @@ centered = false
 
 [node name="PlayerCamera" parent="." instance=ExtResource("2_8c0dv")]
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Cloud" type="Area2D" parent="."]
 position = Vector2(1021, 536)
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cloud"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_7gasy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cloud"]
+position = Vector2(-2, -14)
+shape = SubResource("RectangleShape2D_u85nh")
+
+[node name="Cloud2" type="Area2D" parent="."]
+position = Vector2(1021, 536)
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cloud2"]
+position = Vector2(-1248, 12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7gasy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cloud2"]
+position = Vector2(-1284, 18)
+shape = SubResource("RectangleShape2D_u85nh")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_xfacy")]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("5_e50ht")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2yd30ih043b5"]
+
+[ext_resource type="Script" path="res://Scripts/InGameUI.gd" id="1_khhso"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_khhso")
+
+[node name="Photo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(720, 405)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -202.5
+offset_right = 360.0
+offset_bottom = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+size_flags_horizontal = 4
+stretch_mode = 3
+
+[node name="ShotsLeft" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -29.0
+offset_right = -5.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "20"
+horizontal_alignment = 2

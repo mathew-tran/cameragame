@@ -24,7 +24,7 @@ func TakeSnapshot():
 	var _time = Time.get_datetime_string_from_system().replace(":", "-")
 	var filename = "user://Screenshot-{0}.png".format({"0":_time})
 	capture.save_png(filename)
-	await get_tree().create_timer(.4).timeout
+	await get_tree().create_timer(.2).timeout
 	EventManager.CreatedPicture.emit(image)
 	var pictureData = {}
 	var areasHit = $Area2D.get_overlapping_areas()
